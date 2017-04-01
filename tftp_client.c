@@ -136,7 +136,9 @@ int main(int argc, char const *argv[]){
     	   tftp_put(sock, argv[2]);
     }else{
     	fprintf(stderr, "Invalid arguments USAGE: ./tftp_client <get/put> <filename>\n");
+    	close_sock(sock);
     	exit(0);
     }
+    close_sock(sock);
     return 0;
 }
